@@ -5,16 +5,16 @@ import React,{ useState} from "react";
 
 function GlobalState(props){
     const [
-      login, // estado de tu login
-      setLogin // funcion para cambiar tu estado
+      login, 
+      setLogin
     ] = useState(localStorage.getItem("login"));
     const loginUser = token=> {
-      setLogin(true); // cambia el estado de login a true y por ende react vuelve a renderizar todo lo asociado a ese valor
+      setLogin(true); 
       localStorage.setItem("login",true);
       localStorage.setItem("token",token)
     }
     const logoutUser = () => {
-      setLogin(false);  // cambia el estado de login a false y por ende react vuelve a renderizar todo lo asociado a ese valor
+      setLogin(false);  
       localStorage.removeItem("login");
       localStorage.removeItem("token")
     }
