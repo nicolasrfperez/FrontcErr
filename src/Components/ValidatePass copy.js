@@ -4,11 +4,11 @@
 
 function ValidatePass(props){
 
-    if (props.password.input.value !== "undefined" &&  props.passwordComp.input.value !== "undefined") {
+    if (typeof props.input["password"] !== "undefined" && typeof props.input["passwordComp"] !== "undefined") {
 
             
 
-      if ( props.password.input.value ===  props.passwordComp.input.value) {
+      if (props.input["password"] === props.input["passwordComp"]) {
 
         props.estado = true;
 

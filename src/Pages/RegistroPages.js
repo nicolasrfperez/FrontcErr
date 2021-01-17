@@ -13,7 +13,7 @@ function RegistroPages(props){
    
     const [form,setForm] = useState({name:'',email:'',password:'', passwordComp:''});
     const [loading,setLoading] = useState(false)
-
+           // console.log('despues del usestate')
     const handleChange = (e)=>{
         setForm({
             ...form,
@@ -50,7 +50,7 @@ function RegistroPages(props){
                 <FormGroup label="Contraseña" type="password" placeholder="Ingrese nuevamente su contraseña" name="passwordComp" value={form.passwordComp} change={handleChange}/>
 
                
-               
+               <ValidatePass/>
                 <ButtonWithLoading text="Registrarse" loading={loading}/>
                    
             </Form>
