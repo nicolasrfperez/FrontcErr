@@ -49,14 +49,15 @@ function RegistroPages(props){
 
         if ( props.password ===  props.passwordComp) {
 
-            loading = true;
+           setLoading = true;
     
            // errors["password"] = "Passwords don't match.";
     
           }
     
     
-      else loading = false
+      else setLoading = false;
+      
        
     return(
     
