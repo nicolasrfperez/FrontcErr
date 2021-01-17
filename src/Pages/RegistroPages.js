@@ -6,6 +6,7 @@ import {Form,Container} from 'react-bootstrap'
 import FormGroup from "../Components/Forms/FormGroup"
 import ButtonWithLoading from "../Components/Forms/ButtonWithLoading"
 import {create} from "../Services/UsuariosServices"
+import ValidatePass from "../Components/ValidatePass"
 // import {ValidatePass} from "../Components/ValidatePass"
 
 function RegistroPages(props){
@@ -20,6 +21,8 @@ function RegistroPages(props){
         })
     }
     const handleSubmit = (e)=>{
+
+        
        
         setLoading(true)
         console.log(form);
@@ -45,7 +48,8 @@ function RegistroPages(props){
 
                 <FormGroup label="Contraseña" type="password" placeholder="Ingrese su contraseña" name="password" value={form.password} change={handleChange}/>
                 <FormGroup label="Contraseña" type="password" placeholder="Ingrese nuevamente su contraseña" name="passwordComp" value={form.passwordComp} change={handleChange}/>
-                
+
+               
                
                 <ButtonWithLoading text="Registrarse" loading={loading}/>
                    

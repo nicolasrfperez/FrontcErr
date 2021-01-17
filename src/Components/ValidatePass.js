@@ -1,14 +1,22 @@
-//import {RegistroPages} from "../Pages/RegistroPages"
-//import { FormGroup}  from "./Forms/FormGroup"
+import {RegistroPages} from "../Pages/RegistroPages"
+import { FormGroup}  from "./Forms/FormGroup"
 
 
 function ValidatePass(props){
-    var pas1 = props.password.value();
-    var pas2 = props.passwordComp.value();
-  const  estadoPass = (pas1 === pas2);
-return(
-estadoPass
-    );
+
+    if (typeof input["password"] !== "undefined" && typeof input["passwordComp"] !== "undefined") {
+
+            
+
+      if (input["password"] != input["passwordComp"]) {
+
+        isValid = false;
+
+        errors["password"] = "Passwords don't match.";
+
+      }
+
+  }
 }
 
 export default ValidatePass
