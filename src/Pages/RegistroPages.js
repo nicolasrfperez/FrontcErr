@@ -6,13 +6,12 @@ import {Form,Container} from 'react-bootstrap'
 import FormGroup from "../Components/Forms/FormGroup"
 import ButtonWithLoading from "../Components/Forms/ButtonWithLoading"
 import {create} from "../Services/UsuariosServices"
-import ValidatePass from "../Components/ValidatePass"
-// import {ValidatePass} from "../Components/ValidatePass"
+//import ValidatePass from "../Components/ValidatePass"
 
 function RegistroPages(props){
    
     const [form,setForm] = useState({name:'',email:'',password:'', passwordComp:''});
-    const [loading,setLoading] = useState(false)
+    let [loading,setLoading] = useState(false)
            // console.log('despues del usestate')
     const handleChange = (e)=>{
         setForm({
@@ -38,8 +37,29 @@ function RegistroPages(props){
         })
         e.preventDefault()
     }
-    return(
+   /* if (ValidatePass.estado) {
+        return <div>estado: {props.estado}</div>;
+      } else if (!isLoaded) {
+        return <div>Loading...</div>;
+      } else {
+    */
+  // if (form.password.input.value !== "undefined" &&  form.passwordComp.input.value !== "undefined") {
+      
+            
 
+        if ( props.password ===  props.passwordComp) {
+
+            loading = true;
+    
+           // errors["password"] = "Passwords don't match.";
+    
+          }
+    
+    
+      else loading = false
+       
+    return(
+    
         <Container>
             <Form onSubmit={handleSubmit}>
                 
@@ -50,7 +70,7 @@ function RegistroPages(props){
                 <FormGroup label="Contraseña" type="password" placeholder="Ingrese nuevamente su contraseña" name="passwordComp" value={form.passwordComp} change={handleChange}/>
 
                
-               <ValidatePass/>
+               
                 <ButtonWithLoading text="Registrarse" loading={loading}/>
                    
             </Form>
